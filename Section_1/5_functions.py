@@ -1,6 +1,6 @@
 import cv2 as cv
 
-# Read in an image
+# Read the image
 img = cv.imread('Resources/Photos/park.jpg')
 cv.imshow('Park', img)
 

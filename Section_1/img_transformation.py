@@ -6,19 +6,19 @@ import numpy as np
 img = cv.imread('Resources/Photos/park.jpg')
 cv.imshow('Park', img)
 
-# Translation
-def translate(img, x, y):
-    transMat = np.float32([[1,0,x],[0,1,y]])
-    dimensions = (img.shape[1], img.shape[0])
-    return cv.warpAffine(img, transMat, dimensions)
+# # Translation
+# def translate(img, x, y):
+#     transMat = np.float32([[1,0,x],[0,1,y]])
+#     dimensions = (img.shape[1], img.shape[0])
+#     return cv.warpAffine(img, transMat, dimensions)
 
-# -x --> Left
-# -y --> Up
-# x --> Right
-# y --> Down
+# # -x --> Left
+# # -y --> Up
+# # x --> Right
+# # y --> Down
 
-translated = translate(img, -100, 100)
-cv.imshow('Translated', translated)
+# translated = translate(img, -100, 100)
+# cv.imshow('Translated', translated)
 
 # # Rotation
 # def rotate(img, angle, rotPoint=None):
@@ -42,9 +42,9 @@ cv.imshow('Translated', translated)
 # resized = cv.resize(img, (500,500), interpolation=cv.INTER_CUBIC)
 # cv.imshow('Resized', resized)
 
-# # Flipping
-# flip = cv.flip(img, -1)
-# cv.imshow('Flip', flip)
+# Flipping
+flip = cv.flip(img, 0)
+cv.imshow('Flip', flip)
 
 # # Cropping
 # cropped = img[200:400, 300:400]
