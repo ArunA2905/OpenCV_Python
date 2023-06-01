@@ -1,5 +1,3 @@
-#pylint:disable=no-member
-
 import cv2 as cv
 import numpy as np
 
@@ -20,30 +18,26 @@ cv.imshow('Park', img)
 # translated = translate(img, -100, 100)
 # cv.imshow('Translated', translated)
 
-# # Rotation
-# def rotate(img, angle, rotPoint=None):
-#     (height,width) = img.shape[:2]
+# Rotation
+def rotate(img, angle, rotPoint=None):
+    (height,width) = img.shape[:2]
 
-#     if rotPoint is None:
-#         rotPoint = (width//2,height//2)
+    if rotPoint is None:
+        rotPoint = (width//2,height//2)
     
-#     rotMat = cv.getRotationMatrix2D(rotPoint, angle, 1.0)
-#     dimensions = (width,height)
+    rotMat = cv.getRotationMatrix2D(rotPoint, angle, 1.0)
+    dimensions = (width,height)
 
-#     return cv.warpAffine(img, rotMat, dimensions)
+    return cv.warpAffine(img, rotMat, dimensions)
 
-# rotated = rotate(img, -45)
-# cv.imshow('Rotated', rotated)
+rotated = rotate(img, -45)
+cv.imshow('Rotated', rotated)
 
-# rotated_rotated = rotate(img, -90)
-# cv.imshow('Rotated Rotated', rotated_rotated)
-
-# # Resizing
-# resized = cv.resize(img, (500,500), interpolation=cv.INTER_CUBIC)
-# cv.imshow('Resized', resized)
+rotated_rotated = rotate(img, -90)
+cv.imshow('Rotated Rotated', rotated_rotated)
 
 # Flipping
-flip = cv.flip(img, 0)
+flip = cv.flip(img, 1)
 cv.imshow('Flip', flip)
 
 # # Cropping
