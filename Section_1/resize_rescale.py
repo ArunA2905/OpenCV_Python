@@ -1,7 +1,7 @@
 import cv2 as cv
 
 def rescaleFrame(frame, scale=0.75): #For Images,Videos,Live Video. 
-    #print(frame.shape)
+    print(frame.shape[1])
     width = int(frame.shape[1] * scale)
     height = int(frame.shape[0] * scale)
 

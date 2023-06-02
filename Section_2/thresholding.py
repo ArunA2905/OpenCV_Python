@@ -29,4 +29,3 @@ cv.waitKey(0)
 
 
 
-adaptive = cv.adaptiveThreshold()
